@@ -117,6 +117,7 @@ bluetooth.profile.ccp.server.enabled?=true
 bluetooth.profile.vcp.controller.enabled?=true
 
 # Camera
+camera.disable_zsl_mode=true
 vendor.camera.remapid=0 1 20 21 22 61
 persist.vendor.camera.perflock.enable=0
 vendor.camera.not.cts.apk=1
