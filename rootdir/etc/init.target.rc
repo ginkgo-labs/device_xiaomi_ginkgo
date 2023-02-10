@@ -51,6 +51,9 @@ on late-fs
     start bootanim
 
 on property:sys.boot_completed=1
+    # Enable suspend to RAM
+    write /sys/power/mem_sleep "deep"
+
     # Runtime fs tuning
     write /sys/block/sda/queue/nr_requests 128
     write /sys/block/sda/queue/iostats 0
