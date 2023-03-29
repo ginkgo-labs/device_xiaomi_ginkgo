@@ -266,7 +266,8 @@ PRODUCT_PACKAGES += \
     init.class_main.sh \
     init.qcom.early_boot.sh \
     init.qcom.post_boot.sh \
-    init.qcom.sh
+    init.qcom.sh \
+    fastcharge.sh
 
 PRODUCT_PACKAGES += \
     init.device.rc \
