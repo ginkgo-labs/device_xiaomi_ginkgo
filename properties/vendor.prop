@@ -117,6 +117,7 @@ bluetooth.profile.ccp.server.enabled?=true
 bluetooth.profile.vcp.controller.enabled?=true
 
 # Camera
+vendor.camera.remapid=0 1 20 21 22 61
 persist.vendor.camera.expose.aux=1
 persist.vendor.camera.perflock.enable=0
 vendor.camera.not.cts.apk=1
@@ -159,6 +160,10 @@ drm.service.enabled=true
 
 # fastbootd
 ro.fastbootd.available=true
+
+# Fingerprint
+persist.vendor.fingerprint.type=rear
+persist.vendor.fingerprint.detect_interaction=true
 
 # Fwk detect
 ro.vendor.qti.va_aosp.support=1
