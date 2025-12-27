@@ -1,4 +1,8 @@
 #!/bin/bash
+# Clone hardware/xiaomi
+rm -rf hardware/xiaomi
+git clone --depth=1 https://github.com/neophyteprjkt/android_hardware_xiaomi hardware/xiaomi
+
 # Auto-apply framework patch for SurfaceFlinger (disable HW overlays by default)
 
 apply_ginkgo_patches() {
