@@ -63,6 +63,11 @@ vendor.mm.enable.qcom_parser=16777215
 # Netflix
 ro.netflix.bsp_rev=Q6125-17995-1
 
+# QTI Mem Optimize
+persist.vendor.sys.memplus.enable=false
+ro.vendor.qti.sys.fw.bg_apps_limit=30
+ro.vendor.qti.sys.fw.bservice_limit=60
+
 # Radio
 persist.radio.NO_STAPA=1
 persist.rcs.supported = 1
