@@ -22,6 +22,9 @@ PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
 PRODUCT_PACKAGES += \
     LineageSDKGinkgo
 
+# MiuiCamera
+$(call inherit-product-if-exists, device/xiaomi/miuicamera-ginkgo/device.mk)
+
 # AAPT
 PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
