@@ -51,9 +51,6 @@ on late-fs
     start bootanim
 
 on property:sys.boot_completed=1
-    # Enable suspend to RAM
-    write /sys/power/mem_sleep "deep"
-
     # Runtime fs tuning
     write /sys/block/sda/queue/nr_requests 128
     write /sys/block/sda/queue/iostats 0
@@ -390,14 +387,35 @@ on property:sys.boot_completed=1
     # Mount swap partitions specified in fstab
     swapon_all /vendor/etc/fstab.zram
 
+on boot
+    # GPU boost
+    chown system system /sys/class/kgsl/kgsl-3d0/min_pwrlevel
+    chmod 0660 /sys/class/kgsl/kgsl-3d0/min_pwrlevel
+
+    # Kernelspace battery saver
+    chown system system /sys/module/battery_saver/parameters/enabled
+    chmod 0660 /sys/module/battery_saver/parameters/enabled
+
+    # KCAL
+    chown system system /sys/devices/platform/kcal_ctrl.0/kcal_enable
+    chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal_enable
+    chown system system /sys/devices/platform/kcal_ctrl.0/kcal
+    chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal
+    chown system system /sys/devices/platform/kcal_ctrl.0/kcal_sat
+    chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal_sat
+    chown system system /sys/devices/platform/kcal_ctrl.0/kcal_val
+    chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal_val
+    chown system system /sys/devices/platform/kcal_ctrl.0/kcal_cont
+    chmod 0660 /sys/devices/platform/kcal_ctrl.0/kcal_cont
+
+    # Vibration
+    chown system system /sys/class/leds/vibrator/vtg_level
+    chmod 0660 /sys/class/leds/vibrator/vtg_level
+
+    # Thermal Profile
+    write /sys/class/thermal/thermal_message/sconfig 0
+
 on property:vendor.post_boot.parsed=1
     # Setup scheduler tunables
     write /proc/sys/kernel/sched_upmigrate 85
     write /proc/sys/kernel/sched_downmigrate 75
-    write /proc/sys/kernel/sched_child_runs_first 1
-
-    # Setup cpu boosting
-    write /sys/module/cpu_boost/parameters/input_boost_freq "0:1017600 4:1401600"
-    write /sys/module/cpu_boost/parameters/input_boost_ms 100
-    write /sys/module/cpu_boost/parameters/powerkey_input_boost_freq "0:1804800 4:2016000"
-    write /sys/module/cpu_boost/parameters/powerkey_input_boost_ms 750

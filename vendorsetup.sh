@@ -1,10 +1,10 @@
 #!/bin/bash
 # Clone hardware/xiaomi
 rm -rf hardware/xiaomi
-git clone --depth=1 https://github.com/neophyteprjkt/android_hardware_xiaomi hardware/xiaomi
+git clone --depth=1 https://github.com/neophyteprjkt/hardware_xiaomi hardware/xiaomi
 
 # Clone dolby
-git clone --depth=1 https://github.com/neophyteprjkt/android_hardware_dolby hardware/dolby
+git clone --depth=1 https://github.com/neophyteprjkt/hardware_dolby hardware/dolby
 
 # Auto-apply framework patch for SurfaceFlinger (disable HW overlays by default)
 

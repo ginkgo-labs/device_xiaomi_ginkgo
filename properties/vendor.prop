@@ -187,9 +187,9 @@ persist.vendor.fingerprint.detect_interaction=true
 ro.vendor.qti.va_aosp.support=1
 
 # Graphics
-debug.sf.latch_unsignaled=0
-debug.sf.disable_backpressure=0
-debug.sf.enable_gl_backpressure=1
+debug.sf.latch_unsignaled=1
+debug.sf.disable_backpressure=1
+debug.sf.enable_gl_backpressure=0
 debug.force_no_blanking=true
 debug.mdpcomp.logs=0
 debug.sf.disable_client_composition_cache=0
