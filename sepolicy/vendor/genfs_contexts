@@ -18,3 +18,6 @@ genfscon sysfs /devices/platform/soc/1c40000.qcom,spmi/spmi-0/spmi0-03/1c40000.q
 
 # DT2W
 genfscon sysfs /touchpanel u:object_r:sysfs_touchpanel:s0
+
+# Battery saver
+genfscon sysfs /module/battery_saver/parameters/enabled u:object_r:sysfs_battery_saver:s0
